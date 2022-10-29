@@ -1,0 +1,25 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+@font-face {
+   font-family: 'Nunito';
+   src: url('../assets/fonts/Nunito.ttf');
+}
+
+body {
+   font-family: 'Nunito', sans-serif;
+
+   /* Gradient generated with https://cssgradient.io */
+   background: rgb(12, 206, 107);
+   background: linear-gradient(
+      135deg,
+      rgba(12, 206, 107, 1) 0%,
+      rgba(0, 181, 134, 1) 50%,
+      rgba(0, 154, 146, 1) 100%
+   );
+
+   height: 100vh;
+}
