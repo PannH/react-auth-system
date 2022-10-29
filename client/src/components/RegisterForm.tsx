@@ -18,15 +18,18 @@ async function createAccount(username: string, password: string): Promise<AxiosR
 
 function RegisterForm() {
 
+   // Account mutation
    const accountMutation = useMutation((accountCredentials: {username: string, password: string }) => {
       return createAccount(accountCredentials.username, accountCredentials.password);
    });
 
+   // Hooks
    const [ username, setUsername ] = useState('');
    const [ password, setPassword ] = useState('');
    const [ errorMessage, setErrorMessage ] = useState('');
    const [ successMessage, setSucessMessage ] = useState('');
 
+   // Username and password update
    const updateUsername = (e: any) => {
       setUsername(e.target.value);
       setSucessMessage('');
@@ -37,6 +40,7 @@ function RegisterForm() {
       setSucessMessage('');
    }
 
+   // Username and password verification
    useEffect(() => {
 
       const isUsernameValid = username.length >= 3 && username.length <= 32;
@@ -59,6 +63,7 @@ function RegisterForm() {
 
    }, [password])
 
+   // Form Submit
    const handleFormSubmit = async (e: any) => {
 
       e.preventDefault();
@@ -73,6 +78,7 @@ function RegisterForm() {
 
    }
 
+   // JSX
    return (
       <form className='register-form' onSubmit={handleFormSubmit}>
          <h1>Register</h1>
