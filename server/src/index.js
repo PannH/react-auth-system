@@ -23,7 +23,7 @@ app.post('/create-account', async (req, res) => {
 
    if (foundUser)
       return res.send({
-         error: `User with username '${username}' already exists.`,
+         error: `User with username "${username}" already exists.`,
       });
 
    await prisma.user.create({

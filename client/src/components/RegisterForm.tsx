@@ -5,6 +5,7 @@ import '../styles/RegisterForm.css'
 
 const PASSWORD_REGEX = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-_]).{8,32}$/;
 
+// Create an account
 async function createAccount(username: string, password: string): Promise<AxiosResponse> {
 
    const res = await axios.post('http://localhost:1234/create-account', { username, password });
@@ -18,12 +19,12 @@ async function createAccount(username: string, password: string): Promise<AxiosR
 
 function RegisterForm() {
 
-   // Account mutation
+   // Mutation hook
    const accountMutation = useMutation((accountCredentials: {username: string, password: string }) => {
       return createAccount(accountCredentials.username, accountCredentials.password);
    });
 
-   // Hooks
+   // State hooks
    const [ username, setUsername ] = useState('');
    const [ password, setPassword ] = useState('');
    const [ errorMessage, setErrorMessage ] = useState('');

@@ -1,8 +1,11 @@
-import './styles/App.css'
-import RegisterForm from './components/RegisterForm'
-import { QueryClient, QueryClientProvider } from 'react-query';
+import RegisterForm from "../components/RegisterForm";
+import {
+   QueryClient,
+   QueryClientProvider
+} from 'react-query'
+import '../styles/Register.css'
 
-function App() {
+function Register() {
 
    const queryClient = new QueryClient();
 
@@ -16,4 +19,4 @@ function App() {
 
 }
 
-export default App
+export default Register;

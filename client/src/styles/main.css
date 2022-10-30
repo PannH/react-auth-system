@@ -1,0 +1,15 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+@font-face {
+   font-family: 'Nunito';
+   src: url('../assets/fonts/Nunito.ttf');
+}
+
+body {
+   font-family: 'Nunito', sans-serif;
+   height: 100vh;
+}
