@@ -1,0 +1,69 @@
+:root {
+   /* Gradient generated with https://cssgradient.io */
+   --green-linear-gradient: linear-gradient(
+      135deg,
+      rgba(12, 206, 107, 1) 0%,
+      rgba(0, 181, 134, 1) 50%,
+      rgba(0, 154, 146, 1) 100%
+   );
+}
+
+main.home {
+   background: var(--green-linear-gradient);
+
+   height: 100%;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.home .container {
+   background-color: #363537e7;
+
+   width: 90%;
+   height: 90%;
+
+   border-radius: 50px;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.greetings {
+   text-align: center;
+   line-height: 50px;
+}
+
+.greetings .username {
+   background: var(--green-linear-gradient);
+
+   border-radius: 10px;
+
+   padding: 0 7.5px;
+}
+
+.button-container {
+   margin-top: 20px;
+}
+
+.button-container button {
+   background: var(--green-linear-gradient);
+
+   border: none;
+   border-radius: 10px;
+
+   padding: 10px 20px;
+   margin: 0 15px;
+
+   font-size: 1.5em;
+
+   transition: transform ease 0.2s;
+}
+
+.button-container button:hover {
+   cursor: pointer;
+   transform: scale(1.05);
+}

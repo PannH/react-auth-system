@@ -11,7 +11,7 @@ function Register() {
 
    return (
       <QueryClientProvider client={queryClient}>
-         <main>
+         <main className='register'>
             <RegisterForm/>
          </main>
       </QueryClientProvider>

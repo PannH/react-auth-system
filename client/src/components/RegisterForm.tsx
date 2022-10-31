@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useMutation } from 'react-query';
 import axios, { AxiosResponse } from 'axios';
+import useCookie from '../hooks/useCookie';
 import '../styles/RegisterForm.css'
 
 const PASSWORD_REGEX = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-_]).{8,32}$/;
@@ -29,6 +30,10 @@ function RegisterForm() {
    const [ password, setPassword ] = useState('');
    const [ errorMessage, setErrorMessage ] = useState('');
    const [ successMessage, setSucessMessage ] = useState('');
+
+   // Cookie hooks
+   const usernameCookie = useCookie('user_username');
+   const passwordCookie = useCookie('user_password');
 
    // Username and password update
    const updateUsername = (e: any) => {
@@ -74,7 +79,11 @@ function RegisterForm() {
 
       accountMutation.mutate({ username, password }, {
          onError: (err: any) => setErrorMessage(err.message),
-         onSuccess: () => setSucessMessage('Your account has been successfully created.')
+         onSuccess: () => {
+            setSucessMessage('Your account has been successfully created.');
+            usernameCookie.set(username, 7);
+            passwordCookie.set(password, 7);
+         }
       });
 
    }

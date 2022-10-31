@@ -2,7 +2,7 @@
    height: 100%;
 }
 
-main {
+main.register {
    display: flex;
    justify-content: center;
    align-items: center;
